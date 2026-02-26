@@ -1,0 +1,702 @@
+[
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 4]\n  Node 3: no neighbors\n  Node 4: neighbors [2]\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]\n  Node 4: no neighbors"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1, 0].\nDegree sequence of G2: [2, 1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21924, node 4\u21923\nEdge (1,2) in G1 \u2192 edge (2,1) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->4, 4->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 1 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921\nEdge (2,3) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 1 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 1 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 1 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1].\nDegree sequence of G2: [2, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21923\nEdge (1,2) in G1 \u2192 edge (2,1) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [4]\n  Node 3: neighbors [1]\n  Node 4: neighbors [2]\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [4]\n  Node 3: neighbors [1]\n  Node 4: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 2 edges.\nDegree sequence of G1: [1, 1, 1, 1].\nDegree sequence of G2: [1, 1, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21924, node 2\u21921, node 3\u21922, node 4\u21923\nEdge (1,3) in G1 \u2192 edge (4,2) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->4, 2->1, 3->2, 4->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 1 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21922, node 3\u21923\nEdge (1,3) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->2, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: no neighbors\n  Node 3: neighbors [4]\n  Node 4: neighbors [3]\n\nGraph G2 (4 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: no neighbors\n  Node 3: neighbors [4]\n  Node 4: neighbors [3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0, 0].\nDegree sequence of G2: [1, 1, 0, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21922, node 3\u21923, node 4\u21924\nEdge (3,4) in G1 \u2192 edge (3,4) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->2, 3->3, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [2, 4]\n  Node 2: neighbors [1]\n  Node 3: neighbors [4]\n  Node 4: neighbors [1, 3]\n\nGraph G2 (4 nodes, 4 edges):\n  Node 1: neighbors [2, 3, 4]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 3 edges.\nG2 has 4 nodes and 4 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [1]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 3, 4]\n  Node 2: neighbors [1, 4]\n  Node 3: neighbors [1, 4]\n  Node 4: neighbors [1, 2, 3]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 3 edges.\nG2 has 4 nodes and 5 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: neighbors [4]\n  Node 4: neighbors [1, 2, 3]\n\nGraph G2 (4 nodes, 3 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: neighbors [4]\n  Node 4: neighbors [1, 2, 3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 3 edges.\nDegree sequence of G1: [3, 1, 1, 1].\nDegree sequence of G2: [3, 1, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21922, node 3\u21923, node 4\u21924\nEdge (1,4) in G1 \u2192 edge (1,4) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (2,4) in G2 \u2713\nEdge (3,4) in G1 \u2192 edge (3,4) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->2, 3->3, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 4 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [3]\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n  Node 4: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 4 edges.\nG2 has 4 nodes and 2 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21923\nEdge (1,3) in G1 \u2192 edge (2,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 1 edges.\nG2 has 3 nodes and 2 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2, 4]\n  Node 4: neighbors [3]\n\nGraph G2 (4 nodes, 4 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [3, 4]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 2 edges.\nG2 has 4 nodes and 4 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921\nEdge (2,3) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3, 4]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [2]\n\nGraph G2 (4 nodes, 3 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2, 4]\n  Node 4: neighbors [3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 3 edges.\nDegree sequence of G1: [2, 2, 1, 1].\nDegree sequence of G2: [2, 2, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21924, node 2\u21922, node 3\u21923, node 4\u21921\nEdge (1,3) in G1 \u2192 edge (4,3) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (2,3) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (2,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->4, 2->2, 3->3, 4->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21922, node 3\u21923\nEdge (2,3) in G1 \u2192 edge (2,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->2, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: no neighbors\n  Node 4: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 1 edges.\nG2 has 4 nodes and 2 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n  Node 4: no neighbors"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0, 0].\nDegree sequence of G2: [1, 1, 0, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921, node 4\u21924\nEdge (2,3) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]\n\nGraph G2 (3 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21923\nEdge (1,2) in G1 \u2192 edge (2,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n  Node 4: no neighbors"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0, 0].\nDegree sequence of G2: [1, 1, 0, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21924, node 3\u21923, node 4\u21922\nEdge (1,3) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->4, 3->3, 4->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [4]\n  Node 3: neighbors [1]\n  Node 4: neighbors [2]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 4]\n  Node 2: neighbors [1, 3, 4]\n  Node 3: neighbors [2, 4]\n  Node 4: neighbors [1, 2, 3]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 2 edges.\nG2 has 4 nodes and 5 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 has 3 nodes and 2 edges.\nG2 has 3 nodes and 1 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 4 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3, 4]\n  Node 3: neighbors [2, 4]\n  Node 4: neighbors [2, 3]\n\nGraph G2 (4 nodes, 4 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [1, 3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 4 edges.\nDegree sequence of G1: [3, 2, 2, 1].\nDegree sequence of G2: [3, 2, 2, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921, node 4\u21924\nEdge (1,2) in G1 \u2192 edge (2,3) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (3,1) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (3,4) in G2 \u2713\nEdge (3,4) in G1 \u2192 edge (1,4) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: no neighbors\n  Node 4: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1, 0].\nDegree sequence of G2: [2, 1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21924, node 4\u21923\nEdge (1,3) in G1 \u2192 edge (2,4) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (1,4) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->4, 4->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 5 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [3, 4]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [1, 2, 3]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 3, 4]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [1, 3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 5 edges.\nDegree sequence of G1: [3, 3, 2, 2].\nDegree sequence of G2: [3, 3, 2, 2].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21924, node 2\u21922, node 3\u21921, node 4\u21923\nEdge (1,3) in G1 \u2192 edge (4,1) in G2 \u2713\nEdge (1,4) in G1 \u2192 edge (4,3) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (2,1) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (2,3) in G2 \u2713\nEdge (3,4) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->4, 2->2, 3->1, 4->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1].\nDegree sequence of G2: [2, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21921, node 3\u21923\nEdge (1,2) in G1 \u2192 edge (2,1) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->1, 3->3</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [3]\n\nGraph G2 (4 nodes, 3 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: neighbors [4]\n  Node 4: neighbors [1, 2, 3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 3 edges.\nDegree sequence of G1: [3, 1, 1, 1].\nDegree sequence of G2: [3, 1, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21923, node 3\u21924, node 4\u21922\nEdge (1,3) in G1 \u2192 edge (1,4) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (3,4) in G2 \u2713\nEdge (3,4) in G1 \u2192 edge (4,2) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->3, 3->4, 4->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 4 edges):\n  Node 1: neighbors [2, 4]\n  Node 2: neighbors [1, 3, 4]\n  Node 3: neighbors [2]\n  Node 4: neighbors [1, 2]\n\nGraph G2 (4 nodes, 4 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [3]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 4 edges.\nDegree sequence of G1: [3, 2, 2, 1].\nDegree sequence of G2: [3, 2, 2, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21924, node 4\u21921\nEdge (1,2) in G1 \u2192 edge (2,3) in G2 \u2713\nEdge (1,4) in G1 \u2192 edge (2,1) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (3,4) in G2 \u2713\nEdge (2,4) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->4, 4->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 4 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [3, 4]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [1, 2]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 4]\n  Node 2: neighbors [1, 3, 4]\n  Node 3: neighbors [2, 4]\n  Node 4: neighbors [1, 2, 3]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 4 edges.\nG2 has 4 nodes and 5 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21923, node 3\u21922\nEdge (2,3) in G1 \u2192 edge (3,2) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->3, 3->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]\n  Node 4: neighbors [1]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 3, 4]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [1, 2, 4]\n  Node 4: neighbors [1, 3]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 2 edges.\nG2 has 4 nodes and 5 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21923, node 3\u21922\nEdge (1,2) in G1 \u2192 edge (1,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->3, 3->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921\nEdge (1,2) in G1 \u2192 edge (2,3) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 1 edges):\n  Node 1: neighbors [4]\n  Node 2: no neighbors\n  Node 3: no neighbors\n  Node 4: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0, 0].\nDegree sequence of G2: [1, 1, 0, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21924, node 2\u21921, node 3\u21923, node 4\u21922\nEdge (1,2) in G1 \u2192 edge (4,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->4, 2->1, 3->3, 4->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n  Node 4: no neighbors\n\nGraph G2 (4 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n  Node 4: no neighbors"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0, 0].\nDegree sequence of G2: [1, 1, 0, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21922, node 2\u21923, node 3\u21921, node 4\u21924\nEdge (1,3) in G1 \u2192 edge (2,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->2, 2->3, 3->1, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1]\n\nGraph G2 (3 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1].\nDegree sequence of G2: [2, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21923, node 2\u21922, node 3\u21921\nEdge (1,2) in G1 \u2192 edge (3,2) in G2 \u2713\nEdge (1,3) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->3, 2->2, 3->1</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: neighbors [4]\n  Node 4: neighbors [3]\n\nGraph G2 (4 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [4]\n  Node 3: neighbors [1]\n  Node 4: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 4 nodes and 2 edges.\nDegree sequence of G1: [1, 1, 1, 1].\nDegree sequence of G2: [1, 1, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21923, node 3\u21922, node 4\u21924\nEdge (1,2) in G1 \u2192 edge (1,3) in G2 \u2713\nEdge (3,4) in G1 \u2192 edge (2,4) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->3, 3->2, 4->4</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 3 edges):\n  Node 1: neighbors [3, 4]\n  Node 2: neighbors [4]\n  Node 3: neighbors [1]\n  Node 4: neighbors [1, 2]\n\nGraph G2 (4 nodes, 5 edges):\n  Node 1: neighbors [2, 3, 4]\n  Node 2: neighbors [1, 3, 4]\n  Node 3: neighbors [1, 2]\n  Node 4: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 3 edges.\nG2 has 4 nodes and 5 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1]\n  Node 3: no neighbors\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21923, node 2\u21921, node 3\u21922\nEdge (1,2) in G1 \u2192 edge (3,1) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->3, 2->1, 3->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (4 nodes, 2 edges):\n  Node 1: neighbors [4]\n  Node 2: neighbors [4]\n  Node 3: no neighbors\n  Node 4: neighbors [1, 2]\n\nGraph G2 (4 nodes, 3 edges):\n  Node 1: neighbors [2, 3]\n  Node 2: neighbors [1]\n  Node 3: neighbors [1, 4]\n  Node 4: neighbors [3]"
+      }
+    ],
+    "response": "<think>G1 has 4 nodes and 2 edges.\nG2 has 4 nodes and 3 edges.\nDifferent number of edges means they cannot be isomorphic.</think>\n<answer>NOT ISOMORPHIC</answer>",
+    "task_type": "non_isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 1 edges):\n  Node 1: neighbors [3]\n  Node 2: no neighbors\n  Node 3: neighbors [1]\n\nGraph G2 (3 nodes, 1 edges):\n  Node 1: no neighbors\n  Node 2: neighbors [3]\n  Node 3: neighbors [2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 1 edges.\nDegree sequence of G1: [1, 1, 0].\nDegree sequence of G2: [1, 1, 0].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21923, node 2\u21921, node 3\u21922\nEdge (1,3) in G1 \u2192 edge (3,2) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->3, 2->1, 3->2</answer>",
+    "task_type": "isomorphic"
+  },
+  {
+    "prompt": [
+      {
+        "role": "system",
+        "content": "Respond in the following format:\n<think>\n...\n</think>\n<answer>\n...\n</answer>"
+      },
+      {
+        "role": "user",
+        "content": "You are given two graphs G1 and G2. Your task is to determine whether they are isomorphic.\n\nTwo graphs are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves edges. That is, if vertex u is connected to vertex v in G1, then the mapped vertices must also be connected in G2, and vice versa.\n\nIf the graphs ARE isomorphic:\n- Provide the vertex mapping as a list of arrows: \"1->X, 2->Y, 3->Z, ...\"\n  where each entry means \"node i in G1 maps to node X in G2\"\n- The mapping must be a valid permutation (each G2 node appears exactly once)\n- Nodes are 1-indexed\n\nIf the graphs are NOT isomorphic:\n- Write exactly: NOT ISOMORPHIC\n\nThink step by step. Consider the number of nodes, edges, and degree sequences first. If those match, try to construct a mapping.\n\n\nGraph G1 (3 nodes, 2 edges):\n  Node 1: neighbors [2]\n  Node 2: neighbors [1, 3]\n  Node 3: neighbors [2]\n\nGraph G2 (3 nodes, 2 edges):\n  Node 1: neighbors [3]\n  Node 2: neighbors [3]\n  Node 3: neighbors [1, 2]"
+      }
+    ],
+    "response": "<think>G1 and G2 both have 3 nodes and 2 edges.\nDegree sequence of G1: [2, 1, 1].\nDegree sequence of G2: [2, 1, 1].\nThe degree sequences match, so they could be isomorphic.\n\nTrying mapping: node 1\u21921, node 2\u21923, node 3\u21922\nEdge (1,2) in G1 \u2192 edge (1,3) in G2 \u2713\nEdge (2,3) in G1 \u2192 edge (3,2) in G2 \u2713\nAll edges verified \u2014 the graphs are isomorphic.</think>\n<answer>1->1, 2->3, 3->2</answer>",
+    "task_type": "isomorphic"
+  }
+]
