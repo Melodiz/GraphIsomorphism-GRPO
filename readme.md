@@ -8,7 +8,7 @@ I applied GRPO to teach Qwen2.5-1.5B-Instruct to solve graph isomorphism. The ba
 
 Three strategies to break out of it (reward shaping, prompt hints, SFT warmup) each failed for different reasons. An edge counting positive control confirmed the training code works but diverged due to β=0.0. An eval bug silently skipped adapter loading during inference, invalidating all post-training accuracy measurements.
 
-**[Read the report](report/LLMR_report_HW1.pdf)**
+**[Read the report](report/LLMR_report_HW2.pdf)**
 
 ## Repo structure
 
